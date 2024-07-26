@@ -4,7 +4,9 @@ With this project I am attempting to create an ARIMA model that can be used to a
 Check the [notebook](https://github.com/luke-lite/Corn-Futures-ARIMA-Modeling/blob/main/corn-futures-arima-modeling.ipynb) for a breakdown of the code and description of the processes I am using.
 
 ## Data
-I am using historical daily corn price data provided by [Trading Economics](https://tradingeconomics.com/). After verifyinbg and cleaning the data, I created monthly averages to use for training a model, and split the data into training and test sets.
+I am using historical daily corn price data provided by [Trading Economics](https://tradingeconomics.com/). After verifyinbg and cleaning the data, I created monthly averages to use for training a model, and split the data into training and test sets:
+
+![train_test_data.png](https://github.com/luke-lite/Corn-Futures-ARIMA-Modeling/blob/5ed81799472f8dbe420210e1353b4555cc012e62/train_test_data.png)
 
 ## Modeling
 I ran some tests on the monthly averages data and discovered it was likely seasonal and non-stationary. This was expected, but meant that I would need to be careful selecting my ARIMA parameters. I used [auto-arima](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html) to test a variety of parameters, with the best being a SARIMA(1,1,0)(0,0,[1,2],12) model:
