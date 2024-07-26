@@ -1,7 +1,7 @@
-# Corn-Futures-ARIMA-Modeling
+# Corn Futures ARIMA Modeling
 With this project I am attempting to create an ARIMA model that can be used to accurately predict the price of corn at 1, 3, 6, 9, and 12-month intervals. This project is currently in the preliminary phase, but I plan to continue making improvements and incorporating additional data in the future.
 
-Check the [notebook]() for a breakdown of the code and description of the processes I am using.
+Check the [notebook](https://github.com/luke-lite/Corn-Futures-ARIMA-Modeling/blob/main/corn-futures-arima-modeling.ipynb) for a breakdown of the code and description of the processes I am using.
 
 ## Data
 I am using historical daily corn price data provided by [Trading Economics](https://tradingeconomics.com/). After verifyinbg and cleaning the data, I created monthly averages to use for training a model, and split the data into training and test sets.
