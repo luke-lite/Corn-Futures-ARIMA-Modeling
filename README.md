@@ -58,4 +58,6 @@ Overall, the error is obviously too large for the model to be useful in anticipa
 
 One major issue is that ARIMA models rely on the autoregressive nature of the data, meaning that past price activity informs future price movements. However, my test set include the COVID pandemic, a period of huge price volatility that obviously can't be accounted for by a time-series model. In such instances, it is advisable to focus on more traditional supply-demand price analysis. This also means that my test results will be worse than if the model was tested on a more "normal" market window.
 
+## Next Steps
+
 There are several more adjustments that could be made, such as factoring in supply-demand price predictions provided by the USDA in their regular [WASDE reports](https://www.usda.gov/oce/commodity/wasde). Additionally, creating a bi-variate model that include the price movements from a different exchange could also further improve the accuracy of the model. Another option is to include up-to-date movements in the futures market to influence the model predictions at different time intervals. All of these are methods I plan on exploring in future iterations of the project.
