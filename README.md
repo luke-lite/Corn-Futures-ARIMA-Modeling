@@ -4,12 +4,12 @@ With this project I am attempting to create an ARIMA model that can be used to a
 Check the [notebook](https://github.com/luke-lite/Corn-Futures-ARIMA-Modeling/blob/main/corn-futures-arima-modeling.ipynb) for a breakdown of the code and description of the processes I am using.
 
 ## Data
-I am using historical daily corn price data provided by [Trading Economics](https://tradingeconomics.com/). After verifyinbg and cleaning the data, I created monthly averages to use for training a model, and split the data into training and test sets:
+I am using historical daily corn price data provided by [Trading Economics](https://tradingeconomics.com/). After verifying and cleaning the data, I created monthly averages to use for training a model, and split the data into training and test sets:
 
 ![train_test_data.png](https://github.com/luke-lite/Corn-Futures-ARIMA-Modeling/blob/5ed81799472f8dbe420210e1353b4555cc012e62/train_test_data.png)
 
 ## Modeling
-I ran some tests on the monthly averages data and discovered it was likely seasonal and non-stationary. This was expected, but meant that I would need to be careful selecting my ARIMA parameters. I used [auto-arima](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html) to test a variety of parameters, with the best being a SARIMA(1,1,0)(0,0,[1,2],12) model:
+I ran some tests on the monthly averages data and discovered it was seasonal and non-stationary. This was expected, but meant that I would need to be careful selecting my ARIMA parameters. I used [auto-arima](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html) to test a variety of parameters, with the best being a SARIMA(1,1,0)(0,0,[1,2],12) model:
 ```
                                         SARIMAX Results                                        
 ===============================================================================================
@@ -38,7 +38,7 @@ Warnings:
 [1] Covariance matrix calculated using the outer product of gradients (complex-step).
 ```
 
-For an overview of how to interpret these statistical measures, you can check my [blog post](https://luke-lite.github.io/blog/statistical-measures-in-statsmodels/). But for this particular model, the biggest issue is that the data appears to be non-normal. This is something that ideally needs to be addressed, but it will need to wait for a future iteration of the project.
+For an overview of how to interpret some of these statistical measures, you can check my [blog post](https://luke-lite.github.io/blog/statistical-measures-in-statsmodels/). But for this particular model, the biggest issue is that the data appears to be non-normal. This is something that ideally needs to be addressed, but it will need to wait for a future iteration of the project.
 
 ## Results
 
